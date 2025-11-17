@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../Img/BackgroundInformacoes.png");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    height: 200vh;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo {
+    position: absolute;
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 2;
+}
+
+.dhl{
+    position: absolute;
+    top: 226px;
+    left: 53%;
+    transform: translateX(-50%);
+    width: 402px;
+    z-index: 2;
+}
+
+.dressCode{
+    position: absolute;
+    top: 328px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    z-index: 2;
+}
+
+.linkDressCode{
+    position: absolute;
+    top: 587px;
+    left: 47%;
+    transform: translateX(-50%);
+    width: 160px;
+    z-index: 2;
+}
+
+.linkSpotify{
+    position: absolute;
+    top: 700px;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 250px;
+    z-index: 2;
+}
+
+.estacaoMusical{
+    position: absolute;
+    top: 700px;
+    left: 92%;
+    transform: translateX(-50%);
+    width: 40px;
+    z-index: 2;
+}
+
+.estrela{
+    position: absolute;
+    top: 855px;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 173px;
+    z-index: 2;
+}
+
+.tituloHamburguer{
+    position: absolute;
+    top: 1001px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 346px;
+    z-index: 2;
+}
+
+
+
+/* Área geral das 3 colunas */
+.montagem-wrapper {
+    position: absolute;
+    top: 1053px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* COLUNA ESQUERDA INGREDIENTES */
+.coluna-esquerda,
+.coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.coluna-esquerda h4,
+.coluna-direita h4 {
+    color: #F4DDCE;
+    border: solid 1px #973C40;
+    background-color: #973C40;
+    border-radius: 40px;
+    padding: 4px;
+    width: 100px;
+    text-align: center;
+    margin: 10px 0 2px 0;
+    font-size: 0.7rem;
+}
+
+.coluna-esquerda h5,
+.coluna-direita h5 {
+    margin: 0;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding-left: 7px;
+    text-transform: uppercase;
+    color: #973C40;
+}
+
+
+.observacao{
+   margin-top: 10px;
+}
+
+.observacao > button{
+    background-color: #BF6669;
+    height: 16px;
+    width: 95px;
+    font-size: 0.7rem;
+    color: #F4DDCE;
+    border: #BF6669 solid 1px;
+    border-radius: 40px;
+}
+
+.rotateIcons{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4px;
+}
+
+.rotateIcons > i {
+    color: #973C40;
+    font-size: 1rem;
+}
+
+
+/* ÁREA CENTRAL DO HAMBÚRGUER */
+.preview-area {
+    width: 100%;
+    height: 350px;
+    border: 2px dashed #eca3b0;
+    border-radius: 8px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.preview-area {
+    position: relative;
+    height: 350px;
+    border: 2px dashed #eca3b0;
+}
+
+.ingrediente-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+.nomeCriacao{
+    position: absolute;
+    bottom: -529px;
+    left: 54%;
+    transform: translateX(-50%);
+    width: 389px;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    height: 37px;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.nomeCriacao > input{
+    border: #BF6669 solid 1px;
+    border-radius: 40px;
+    height: 15px;
+    margin-left: 3px;
+}
+
+.nomeCriacao > p{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #BF6669;
+    font-weight: bold;
+}
+
+.fim{
+    position: absolute;
+    bottom: -931px;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 438px;
+    z-index: 2;
+}
+.btnFim{
+    position: absolute;
+    bottom: -848px;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 193px;
+    z-index: 2;
+    height: 31px;
+    border: 1px solid #F4DDCE;
+    border-radius: 40px;
+    background-color: #F4DDCE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #973C40;
+}
+
+.btnFim > p{
+    color: #973C40;
+    font-weight: bold;
+}
+
