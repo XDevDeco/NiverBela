@@ -136,7 +136,7 @@ body {
     color: #973C40;
 }
 
-
+/* area de observação */
 .observacao{
    margin-top: 10px;
 }
@@ -188,7 +188,7 @@ body {
 }
 
 
-
+/*Area de envio*/
 
 .nomeCriacao{
     position: absolute;
@@ -248,3 +248,228 @@ body {
     font-weight: bold;
 }
 
+
+/*Area de responsividade*/
+
+/*iphone 14 pro max*/
+@media screen and (max-width: 390px) and (max-height: 844px) {
+    body{
+        height: 211vh;
+    }
+
+    .dressCode{
+    top: 328px;
+    left: 51%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 2;
+    }
+
+    .dhl{
+        width: 398px;
+    }
+
+    .linkDressCode{
+        width: 150px;
+        top: 570px;
+    }
+
+    .linkSpotify{
+        width: 225px;
+        top: 675px;
+    }
+
+    .estrela{
+        top: 800px;
+    }
+
+    .tituloHamburguer{
+    top: 945px;
+    left: 54%;
+    width: 320px;
+    }
+
+    .montagem-wrapper{
+        top: 995px;
+        gap: 7px;
+    }
+
+    .nomeCriacao{
+        bottom: -570px;
+    }
+}
+
+/*iphone XR*/
+@media screen and (max-width: 414px) and (max-height: 896px) {
+    body{
+        height: 205vh;
+    }
+
+    .dressCode{
+    top: 310px;
+    left: 51%;
+    transform: translateX(-50%);
+    width: 436px;
+    z-index: 2;
+    }
+
+    .dhl{
+        width: 398px;
+    }
+
+    .linkDressCode{
+        width: 150px;
+        top: 570px;
+    }
+
+    .linkSpotify{
+        width: 225px;
+        top: 675px;
+    }
+
+    .estrela{
+        top: 800px;
+    }
+
+    .tituloHamburguer{
+    top: 994px;
+    left: 54%;
+    width: 320px;
+    }
+
+    .montagem-wrapper{
+        top: 1049px;
+        gap: 7px;
+    }
+
+    .nomeCriacao{
+        bottom: -570px;
+    }
+}
+
+/*Iphone 12 pro*/
+@media screen and (max-width: 390px) and (max-height: 844px) {
+    body{
+        height: 211vh;
+    }
+
+    .dressCode{
+    top: 315px;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 2;
+    }
+
+    .dhl{
+        width: 398px;
+    }
+
+    .linkDressCode{
+        width: 150px;
+        top: 570px;
+    }
+
+    .linkSpotify{
+        width: 225px;
+        top: 675px;
+    }
+
+    .estrela{
+        top: 800px;
+    }
+
+    .tituloHamburguer{
+    top: 945px;
+    left: 54%;
+    width: 320px;
+    }
+
+    .montagem-wrapper{
+        top: 995px;
+        gap: 7px;
+    }
+
+    .nomeCriacao{
+        bottom: -570px;
+    }
+}
+
+/*Iphone SE*/
+@media screen and (max-width: 375px) and (max-height: 667px) {
+    body{
+        height: 211vh;
+    }
+
+    .logo{
+        top: -28px;
+        width: 320px;
+    }
+
+    .dressCode{
+    top: 315px;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 2;
+    }
+
+    .dhl{
+        width: 350px;
+        top: 172px;
+    }
+
+    .linkDressCode{
+        width: 150px;
+        top: 570px;
+    }
+
+    .linkSpotify{
+        width: 225px;
+        top: 675px;
+    }
+
+    .estrela{
+        top: 800px;
+    }
+
+    .tituloHamburguer{
+    top: 945px;
+    left: 54%;
+    width: 320px;
+    }
+
+    .montagem-wrapper{
+        top: 995px;
+        gap: 7px;
+    }
+
+    .nomeCriacao{
+        bottom: -570px;
+    }
+}
+
+/*Celulares padroes*/
+
+@media screen and (max-width: 430px) and (max-height: 915px) {
+     body{
+        height: 202vh;
+    }
+
+    .dressCode{
+        top: 309px;
+    }
+
+    .tituloHamburguer{
+        top: 990px;
+    }
+
+    .estrela{
+        top: 837px;
+    }
+
+    .nomeCriacao{
+        left: 48px;
+        bottom: -556px;
+    }
+}
