@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/informacoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="page">
+        <img src="img/Logobela20.png" class="logo" alt="Logo Bela 20">
+        <img src="img/DHLb20.png" class="dhl" alt="Data, Local e hora">
+        <img src="img/DressCodeModificado.png" class="dressCode" alt="DressCode">
+        <a href="https://vt.tiktok.com/ZSH3meUckpAta-e7W1M/">
+            <img src="img/LinkDressCode.png" class="linkDressCode" alt="LinkDressCode">
+        </a>
+        <a href="https://open.spotify.com/playlist/68DlBmA9cJGhjjsfJ6blZu?trackId=2AT8iROs4FQueDv2c8q2KE" target="_blank">
+            <img src="img/LinkSpotify.png" class="linkSpotify" alt="linkSpotify">
+        </a>
+        <img src="img/Estmusicalb20.png" class="estacaoMusical" alt="estação Musical">
+        <img src="img/StarB20.png" class="estrela" alt="estrela">
+        <img src="img/HambúrguerB20.png" class="tituloHamburguer" alt="Titulo Hamburguer">
+
+
+
+        <div class="montagem-wrapper">
+
+            <!-- COLUNA ESQUERDA -->
+            <div class="coluna-esquerda">
+
+                <h4>PÃO</h4>
+                <h5 onclick="selecionarIngrediente('pao-brioche-base.png')">BRIOCHE</h5>
+                <h5 onclick="selecionarIngrediente('pao-australiano-base.png')">Australiano</h5>
+
+                <h4>CARNE</h4>
+                <h5 onclick="selecionarIngrediente('carne.png')">Mal Passada</h5>
+                <h5 onclick="selecionarIngrediente('carne.png')">Ao Ponto</h5>
+                <h5 onclick="selecionarIngrediente('carne.png')">Bem Passada</h5>
+                <h5 onclick="selecionarIngrediente('carne.png')">Vegetariana</h5>
+
+                <h4>MOLHOS</h4>
+                <h5 onclick="selecionarIngrediente('ketchup.png')">Ketchup</h5>
+                <h5 onclick="selecionarIngrediente('mostarda.png')">Mostarda</h5>
+                <h5 onclick="selecionarIngrediente('maionese.png')">Maionese</h5>
+                <h5 onclick="selecionarIngrediente('maionese-verde.png')">Maionese Verde</h5>
+                <h5 onclick="selecionarIngrediente('molho-bigmac.png')">Molho BigMac</h5>
+
+            </div>
+
+            <!-- ÁREA CENTRAL DO PREVIEW -->
+            <div class="preview-area" id="preview-area"></div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="coluna-direita">
+
+                <h4>QUEIJO</h4>
+                <h5 onclick="selecionarIngrediente('queijo-mussarela.png')">Mussarela</h5>
+                <h5 onclick="selecionarIngrediente('queijo-cheddar.png')">Cheddar</h5>
+
+                <h4>SALADA</h4>
+                <h5 onclick="selecionarIngrediente('alface.png')">Alface</h5>
+                <h5 onclick="selecionarIngrediente('tomate.png')">Tomate</h5>
+                <h5 onclick="selecionarIngrediente('cebola-caramelizada.png')">Cebola Caramelizada</h5>
+                <h5 onclick="selecionarIngrediente('cebola-picada.png')">Cebola Picada</h5>
+                <h5 onclick="selecionarIngrediente('picles.png')">Picles</h5>
+                <div class="observacao">
+                    <div class="rotateIcons">
+                        <i class="fa-solid fa-rotate-left" id="btnUndo"></i>
+                        <i class="fa-solid fa-rotate-right" id="btnRedo"></i>
+                    </div>
+                    <button id="btnFinalizar">FINALIZAR</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <img src="img/FimB20.png" class="fim" alt="fim">
+        <form id="formCriacao">
+
+            <div class="nomeCriacao">
+                <p>Insira o nome da sua criação: </p>
+                <input type="text" id="nomeCriacao" name="nomeCriacao" disabled>
+            </div>
+
+            <button type="submit" class="btnFim">
+                ✦ ENVIAR ✦
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="js/informacoes.js"></script>
+</body>
+
+</html>
