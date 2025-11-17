@@ -108,6 +108,10 @@ button {
     .bela-coroa {
         width: 98px;
     }
+
+    button{
+        margin-top: 25px;
+    }
 }
 
 @media screen and (max-width: 375px) and (max-height: 667px) {
