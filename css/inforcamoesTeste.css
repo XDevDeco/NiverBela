@@ -1,0 +1,323 @@
+/*
+ * Otimização de Responsividade por Gemini
+ * Substitui unidades fixas (px) por relativas (vw, %)
+ * Remove media queries específicas de dispositivo
+ */
+
+:root {
+    /* Define o tamanho base da tela do design original para cálculo (430px) */
+    --design-width: 430px;
+    /* Define o tamanho base da altura do design original (932px, para a primeira parte) */
+    --design-height-part1: 932px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Garante que o body ocupa 100% da viewport e centraliza o conteúdo */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Remove barra de rolagem horizontal */
+    font-family: Arial, sans-serif;
+    background: url("../Img/BackgroundInformacoes.png");
+    /* Background fixo e cobrindo a largura mínima da tela */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    /* Ajusta a altura total do body para telas maiores */
+    height: auto; 
+}
+
+.page {
+    /* Define a largura máxima como o tamanho do seu design e permite que ele diminua */
+    width: 100vw; 
+    max-width: 430px; /* Largura máxima para manter a proporção do design */
+    min-height: 100vh;
+    position: relative; /* Contêiner principal para o posicionamento dos filhos */
+    /* Remove 'display: flex' do .page para permitir posicionamento absoluto com segurança */
+}
+
+/* * Regra para elementos posicionados: 
+ * O cálculo é (Valor em PX / Largura do Design) * 100 = Valor em VW
+ * Ex: 400px / 430px * 100 ≈ 93vw (93% da largura do contêiner)
+ */
+
+/* Logo Bela 20 (topo) */
+.logo {
+    position: absolute;
+    top: -4vw; /* top: -34px -> (-34/932) * 100% da altura, mas é melhor usar vw para o deslocamento. */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 93vw; /* 400px de 430px é aprox 93% */
+    max-width: 400px;
+    z-index: 2;
+}
+
+/* Data, Hora e Local (DHL) */
+.dhl {
+    position: absolute;
+    top: 24.25%; /* 226px / 932px * 100% ≈ 24.25% */
+    left: 50%; /* Alinha ao centro do contêiner .page */
+    transform: translateX(-50%);
+    width: 93.5vw; /* 402px / 430px * 100% ≈ 93.5vw */
+    max-width: 402px;
+    z-index: 2;
+}
+
+/* Dress Code */
+.dressCode {
+    position: absolute;
+    top: 35.2%; /* 328px / 932px * 100% ≈ 35.2% */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 104.6vw; /* 450px / 430px * 100% ≈ 104.6vw */
+    max-width: 450px;
+    z-index: 2;
+}
+
+/* Link Dress Code */
+.linkDressCode {
+    position: absolute;
+    top: 63%; /* 587px / 932px * 100% ≈ 63% */
+    left: 50%; /* Centralizado visualmente */
+    transform: translateX(-50%);
+    width: 37.2vw; /* 160px / 430px * 100% ≈ 37.2vw */
+    max-width: 160px;
+    z-index: 2;
+}
+
+/* Link Spotify */
+.linkSpotify {
+    position: absolute;
+    top: 75.1%; /* 700px / 932px * 100% ≈ 75.1% */
+    left: 50%; /* Centralizado visualmente */
+    transform: translateX(-50%);
+    width: 58.1vw; /* 250px / 430px * 100% ≈ 58.1vw */
+    max-width: 250px;
+    z-index: 2;
+}
+
+/* Estação Musical (Texto lateral) */
+.estacaoMusical {
+    position: absolute;
+    top: 75.1%; /* 700px / 932px * 100% ≈ 75.1% */
+    /* Este elemento estava muito à direita (left: 92%). Ajustado para ser relativo à largura do contêiner. */
+    right: 0; 
+    transform: translateY(-50%);
+    width: 9.3vw; /* 40px / 430px * 100% ≈ 9.3vw */
+    max-width: 40px;
+    z-index: 2;
+}
+
+/* Estrela Grande */
+.estrela {
+    position: absolute;
+    top: 91.7%; /* 855px / 932px * 100% ≈ 91.7% */
+    left: 20%;
+    transform: translateX(-50%);
+    width: 40.2vw; /* 173px / 430px * 100% ≈ 40.2vw */
+    max-width: 173px;
+    z-index: 2;
+}
+
+/* Título Montagem de Hambúrguer */
+.tituloHamburguer {
+    position: absolute;
+    /* Usa a altura total das duas telas (932 + 932 = 1864).
+       1001px / 1864px * 100% ≈ 53.7% (Se o body fosse 200vh)
+       Se usarmos o .page como contêiner, precisamos calcular o offset abaixo da primeira parte. */
+    top: calc(100% + 70px); /* 100% do .page (primeira parte) + 70px de margem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80.5vw; /* 346px / 430px * 100% ≈ 80.5vw */
+    max-width: 346px;
+    z-index: 2;
+}
+
+/* --- SEÇÃO HAMBÚRGUER --- */
+
+/* Área geral das 3 colunas (Pão, Preview, Queijo) */
+.montagem-wrapper {
+    position: absolute;
+    /* Posiciona abaixo do tituloHamburguer. Usando uma posição absoluta no .page */
+    top: calc(100% + 150px); /* Ajuste com base na posição do título acima */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%; /* 99% estava muito na borda */
+    max-width: 410px; /* Redefine o max-width para melhor encaixe no mobile */
+    display: grid;
+    /* Mantém o grid: 1/4 (coluna esq), 2/4 (preview), 1/4 (coluna dir) */
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1.6vw; /* Gap responsivo (20px) */
+    z-index: 2;
+    padding: 0; /* Remove o padding que causava quebras */
+}
+
+/* COLUNAS INGREDIENTES */
+.coluna-esquerda,
+.coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw; /* Gap responsivo */
+}
+
+.coluna-esquerda h4,
+.coluna-direita h4 {
+    /* Ajusta fontes e elementos para serem responsivos (vw) */
+    padding: 1vw 0;
+    width: 25vw; /* Largura proporcional (100px) */
+    max-width: 100px;
+    text-align: center;
+    margin: 2vw 0 0.5vw 0;
+    font-size: 3vw; /* Tamanho da fonte responsivo */
+    min-font-size: 0.7rem;
+    /* Mantém cores e bordas */
+    color: #F4DDCE;
+    border: solid 1px #973C40;
+    background-color: #973C40;
+    border-radius: 40px;
+}
+
+.coluna-esquerda h5,
+.coluna-direita h5 {
+    /* Ajusta fontes para serem responsivas (vw) */
+    margin: 0;
+    font-size: 3vw;
+    min-font-size: 0.7rem;
+    cursor: pointer;
+    padding-left: 1.6vw; /* Padding responsivo (7px) */
+    text-transform: uppercase;
+    color: #973C40;
+}
+
+/* Area de observação */
+.observacao {
+    margin-top: 2vw;
+}
+
+.observacao>button {
+    /* Ajusta dimensões para serem responsivas */
+    height: 4vw;
+    width: 22vw;
+    max-width: 95px;
+    font-size: 3vw;
+    min-font-size: 0.7rem;
+    /* Mantém cores e bordas */
+    background-color: #BF6669;
+    color: #F4DDCE;
+    border: #BF6669 solid 1px;
+    border-radius: 40px;
+}
+
+.rotateIcons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1vw;
+}
+
+.rotateIcons>i {
+    color: #973C40;
+    font-size: 4vw; /* Tamanho responsivo */
+    min-font-size: 1rem;
+}
+
+
+/* ÁREA CENTRAL DO HAMBÚRGUER */
+.preview-area {
+    /* A altura do preview deve ser proporcional */
+    height: 81.3vw; /* 350px / 430px * 100vw ≈ 81.3vw */
+    min-height: 250px;
+    width: 100%;
+    border: 2px dashed #eca3b0;
+    border-radius: 8px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ingrediente-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Adicionar aqui um max-width se as imagens de ingredientes forem maiores que o contêiner */
+}
+
+/* --- SEÇÃO FINAL (FORMULÁRIO E BOTÃO) --- */
+
+.nomeCriacao {
+    position: absolute;
+    /* Reposiciona com base no final da montagem-wrapper */
+    top: calc(100% + 150px + 81.3vw + 10px); /* Início da montagem + altura do preview + margem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw; /* 389px / 430px * 100vw ≈ 90vw */
+    max-width: 389px;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente o texto e o input */
+}
+
+.nomeCriacao > input {
+    border: #BF6669 solid 1px;
+    border-radius: 40px;
+    height: 4vw; /* Altura responsiva */
+    margin-left: 0.8vw;
+    width: 40%; /* Ajuste a largura do input */
+    max-width: 150px;
+}
+
+.nomeCriacao > p {
+    font-size: 3vw; /* Tamanho responsivo */
+    min-font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #BF6669;
+    font-weight: bold;
+    margin: 0;
+}
+
+.fim {
+    position: absolute;
+    /* Ajustado para ficar logo abaixo do nomeCriacao */
+    top: calc(100% + 150px + 81.3vw + 10vw); 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 101.8vw; /* 438px / 430px * 100vw ≈ 101.8vw */
+    max-width: 438px;
+    z-index: 2;
+}
+
+.btnFim {
+    position: absolute;
+    /* Posiciona acima da imagem 'fim' */
+    top: calc(100% + 150px + 81.3vw + 10vw + 34vw); 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45vw; /* 193px / 430px * 100vw ≈ 45vw */
+    max-width: 193px;
+    z-index: 3; /* Z-index maior para ficar acima da imagem 'fim' */
+    height: 7.2vw; /* Altura responsiva */
+    max-height: 31px;
+    border: 1px solid #F4DDCE;
+    border-radius: 40px;
+    background-color: #F4DDCE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #973C40;
+    text-decoration: none; /* Se for usado como link */
+}
+
+/* Garante que o texto do botão é responsivo */
+.btnFim {
+    font-size: 3.5vw;
+}
+
+/* Remove a altura fixa do body, o conteúdo irá ditar a altura */
+/* Ajuste a altura do body apenas para garantir que todo o conteúdo caiba, se for necessário */
+body {
+    height: auto;
+}
