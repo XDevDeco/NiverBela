@@ -212,7 +212,14 @@ body {
 
 .nomeCriacao {
     position: absolute;
-    top: calc(100% + 150px + 81.3vw - 20px); 
+    /* * NOVO CÁLCULO: Posiciona o elemento após a montagem do hambúrguer.
+     * 100% (fim da primeira tela) 
+     * + 150px (margem abaixo do título) 
+     * + 81.3vw (altura da área de preview) 
+     * + 10vw (espaçamento extra para descer)
+     */
+    top: calc(100% + 150px + 81.3vw + 10vw); /* Ajuste este valor final (10vw) se precisar descer/subir um pouco mais */
+    
     left: 50%;
     transform: translateX(-50%);
     width: 90vw; 
@@ -221,7 +228,7 @@ body {
     display: flex;
     flex-direction: row;
     height: auto;
-    justify-content: center;
+    justify-content: center; /* Centraliza a caixa como um todo */
     align-items: center; 
 }
 
@@ -229,9 +236,9 @@ body {
     border: #BF6669 solid 1px;
     border-radius: 40px;
     height: 4vw; 
-    margin-left: 0.8vw;
-    width: 40%; 
-    max-width: 150px;
+    margin-left: 2vw; /* Aumente a margem para separar do texto (era 0.8vw) */
+    width: 50%; /* Dê mais largura ao input para que ocupe mais espaço */
+    max-width: 200px;
     padding: 0.5vw 2vw; 
     box-sizing: border-box; 
 }
@@ -248,8 +255,13 @@ body {
 /* Imagem "fim" (Agora é só confirmar sua presença + foto) */
 .fim {
     position: absolute;
-    /* Posição ajustada com base na imagem de referência */
-    top: calc(100% + 150px + 81.3vw + 10vw + 20px); 
+    /* NOVO CÁLCULO: Posiciona a imagem 'fim' logo abaixo do '.nomeCriacao'
+     * 100% (fim da primeira tela)
+     * + 150px (margem abaixo do título)
+     * + 81.3vw (altura da área de preview)
+     * + 15vw (espaço para o .nomeCriacao + margem) -> ajuste este valor para posicionar o "Agora é só confirmar"
+     */
+    top: calc(100% + 150px + 81.3vw + 15vw); /* Ajuste o '15vw' se precisar subir/descer a imagem 'fim' */
     left: 50%;
     transform: translateX(-50%);
     width: 101.8vw; 
@@ -260,20 +272,25 @@ body {
 /* ESTILO PARA A NOVA IMAGEM DO BOTÃO ENVIAR (substitui o antigo .btnFim) */
 .link-btn-enviar {
     position: absolute;
-    /* Posição exata sobre a imagem do botão */
-    top: calc(100% + 150px + 81.3vw + 10vw + 33.5vw); 
+    /* NOVO CÁLCULO DE TOP: Posiciona o botão exatamente sobre a imagem impressa.
+     * Use a base de posicionamento do '.fim' (a imagem da menina) e ajuste o offset.
+     * Ajuste o valor final (ex: +36.5vw) para subir ou descer.
+     */
+    top: calc(100% + 190px + 81.3vw + 15vw + 36.5vw); 
     left: 50%;
     transform: translateX(-50%);
-    width: 45vw;
-    max-width: 193px;
-    z-index: 3; /* Z-index alto para ficar clicável sobre a imagem .fim */
+    
+    /* Largura do Botão: A imagem solo do botão parece ser mais larga que 45vw. */
+    width: 60vw; /* Aumentado para cobrir a largura do botão na imagem da menina */
+    max-width: 300px; /* Max-width ajustado para a proporção do botão na imagem */
+    
+    z-index: 3;
     cursor: pointer;
-    /* Garante que o link não adicione nenhum espaçamento */
     display: block; 
 }
 
 .btnFim-img {
-    width: 100%; /* A imagem dentro do link ocupa toda a largura do link */
+    width: 100%; /* A imagem preenche a largura ajustada (60vw / 260px) */
     height: auto;
     display: block;
 }
