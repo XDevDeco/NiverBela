@@ -204,6 +204,23 @@ document.getElementById("formCriacao").addEventListener("submit", async function
     alert("Criação enviada! 🎉");
 });
 
+// --- NOVO LISTENER PARA SUBMIT DO LINK DE IMAGEM ---
+
+// 1. Encontra o novo link de imagem do botão "ENVIAR"
+const linkBtnEnviar = document.querySelector(".link-btn-enviar");
+const formCriacao = document.getElementById("formCriacao");
+
+if (linkBtnEnviar) {
+    linkBtnEnviar.addEventListener("click", function(e) {
+        // Previne o comportamento padrão do link (que seria tentar navegar para uma nova página)
+        e.preventDefault(); 
+        
+        // Simula o clique no botão de submit do formulário
+        // Isso irá disparar o 'submit' listener que você já tem no formCriacao
+        formCriacao.dispatchEvent(new Event('submit'));
+    });
+}
+
 
 
 
