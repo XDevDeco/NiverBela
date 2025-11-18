@@ -87,7 +87,7 @@ input[type="file"] {
 }
 
 button {
-    margin-top: 10px;
+    margin-top: 40px;
     background: #c0392b;
     color: white;
     border: none;
@@ -110,7 +110,7 @@ button {
     }
 
     button{
-        margin-top: 25px;
+        margin-top: 40px;
     }
 }
 
