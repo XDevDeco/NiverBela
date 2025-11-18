@@ -67,8 +67,8 @@ body {
 
 .linkDressCode {
     position: absolute;
-    top: 63%; 
-    left: 50%; 
+    top: 65%; 
+    left: 45%; 
     transform: translateX(-50%);
     width: 37.2vw; 
     max-width: 160px;
